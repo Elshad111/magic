@@ -31,16 +31,14 @@ var changeWizard = function(arr){
 		counter = 0;
 	}
 	return arr[counter];
-}	
+};	
 var getRandom = function(min, max){
 	return Math.floor(Math.random() * (max - min + 1)) + min;
 };
-
 var openPopup = function(){
 	setup.classList.remove('hidden');
 	document.addEventListener('keydown', onPopupEscPress);
 };
-
 var closePopup = function(){
 	setup.classList.add('hidden');
 	document.removeEventListener('keydode', onPopupEscPress);
