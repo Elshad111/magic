@@ -18,12 +18,20 @@ var surnames = ['да Марья', 'Верон', 'Мирабелла', 'Валь
 var coatColor = ['rgb(101, 137, 164)', 'rgb(241, 43, 107)', 'rgb(146, 100, 161)', 'rgb(56, 159, 117)', 'rgb(215, 210, 55)', 'rgb(0, 0, 0)'];
 var eyesColor = ['black', 'red', 'blue', 'yellow', 'green'];
 var fireballColor = ['#ee4830', '#30a8ee', '#5ce6c0', '#e848d5', '#e6e848'];
+var counter = 0;
 
 var onPopupEscPress = function(evt){
 	if(evt.keyCode === 27){
 		closePopup();
 	}
 };
+var changeWizard = function(arr){
+	counter++;
+	if(counter > arr.length - 1){
+		counter = 0;
+	}
+	return arr[counter];
+}	
 var getRandom = function(min, max){
 	return Math.floor(Math.random() * (max - min + 1)) + min;
 };
@@ -57,14 +65,18 @@ setupClose.addEventListener('keydown', function(evt){
 		closePopup();
 	}
 });
+
 wizardCoat.addEventListener('click', function(){
-	wizardCoat.style.fill = coatColor[getRandom(0, 5)];
+	wizardCoat.style.fill = changeWizard(coatColor);
+	//wizardCoat.style.fill = coatColor[getRandom(0, 5)];
 });
 wizardEyes.addEventListener('click', function(){
-	wizardEyes.style.fill = eyesColor[getRandom(0, 4)];
+	wizardEyes.style.fill = changeWizard(eyesColor);
+	//wizardEyes.style.fill = eyesColor[getRandom(0, 4)];
 });
 wizardFireball.addEventListener('click', function(){
-	wizardFireball.style.background = fireballColor[getRandom(0, 4)];
+	wizardFireball.style.background = changeWizard(fireballColor);
+	//wizardFireball.style.background = fireballColor[getRandom(0, 4)];
 });
 
 var wizards = [
