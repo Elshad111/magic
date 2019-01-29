@@ -30,6 +30,10 @@
 				setupDialogElement.style.left = '400px';
 			}else if((setupDialogElement.offsetTop - shift.y) <= 0){
 				setupDialogElement.style.top = '0px';
+			}else if((setupDialogElement.offsetLeft - shift.x) > screen.width){
+				setupDialogElement.style.left = screen.width + 'px';
+			}else if((setupDialogElement.offsetTop - shift.y) > screen.height){
+				setupDialogElement.style.top = screen.height + 'px';
 			}else{
 				setupDialogElement.style.top = (setupDialogElement.offsetTop - shift.y) + 'px';
 				setupDialogElement.style.left = (setupDialogElement.offsetLeft - shift.x) + 'px';
