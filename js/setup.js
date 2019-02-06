@@ -42,18 +42,18 @@
 })();
 
 (function(){
-	var setupUser = window.setup.setup.querySelector('.setup-user-name');
+	// var setupUser = window.setup.setup.querySelector('.setup-user-name');
 	var wizardCoat = window.setup.setup.querySelector('.setup-wizard .wizard-coat');
 	var wizardEyes = window.setup.setup.querySelector('.setup-wizard .wizard-eyes');
 	var wizardFireball = window.setup.setup.querySelector('.setup-fireball-wrap');
 
-	var similarWizardTemplate = document.querySelector('#similar-wizard-template')
-		.content.querySelector('.setup-similar-item');
-	var setupSimilarList = document.querySelector('.setup-similar-list');
-	var fragment = document.createDocumentFragment();
+	// var similarWizardTemplate = document.querySelector('#similar-wizard-template')
+	// 	.content.querySelector('.setup-similar-item');
+	// var setupSimilarList = document.querySelector('.setup-similar-list');
+	// var fragment = document.createDocumentFragment();
 
-	var names = ['Иван', 'Хуан Себастьян', 'Мария', 'Кристоф', 'Виктор', 'Юлия', 'Люпита', 'Вашингтон'];
-	var surnames = ['да Марья', 'Верон', 'Мирабелла', 'Вальц', 'Онопко', 'Топольницкая', 'Нионго', 'Ирвинг'];
+	// var names = ['Иван', 'Хуан Себастьян', 'Мария', 'Кристоф', 'Виктор', 'Юлия', 'Люпита', 'Вашингтон'];
+	// var surnames = ['да Марья', 'Верон', 'Мирабелла', 'Вальц', 'Онопко', 'Топольницкая', 'Нионго', 'Ирвинг'];
 	var coatColor = ['rgb(101, 137, 164)', 'rgb(241, 43, 107)', 'rgb(146, 100, 161)', 'rgb(56, 159, 117)', 'rgb(215, 210, 55)', 'rgb(0, 0, 0)'];
 	var eyesColor = ['black', 'red', 'blue', 'yellow', 'green'];
 	var fireballColor = ['#ee4830', '#30a8ee', '#5ce6c0', '#e848d5', '#e6e848'];
@@ -80,41 +80,41 @@
 		//wizardFireball.style.background = fireballColor[window.setupgetRandom(0, 4)];
 	});
 
-	var wizards = [
-		{
-			name: names[window.setup.getRandom(0, 7)] + ' ' + surnames[window.setup.getRandom(0, 7)],
-			coatColor: coatColor[window.setup.getRandom(0, 5)],
-			eyesColor: eyesColor[window.setup.getRandom(0, 4)]
-		},
-		{
-			name: names[window.setup.getRandom(0, 7)] + ' ' + surnames[window.setup.getRandom(0, 7)],
-			coatColor: coatColor[window.setup.getRandom(0, 5)],
-			eyesColor: eyesColor[window.setup.getRandom(0, 4)]
-		},
-		{
-			name: names[window.setup.getRandom(0, 7)] + ' ' + surnames[window.setup.getRandom(0, 7)],
-			coatColor: coatColor[window.setup.getRandom(0, 5)],
-			eyesColor: eyesColor[window.setup.getRandom(0, 4)]
-		},
-		{
-			name: names[window.setup.getRandom(0, 7)] + ' ' + surnames[window.setup.getRandom(0, 7)],
-			coatColor: coatColor[window.setup.getRandom(0, 5)],
-			eyesColor: eyesColor[window.setup.getRandom(0, 4)]
-		}
-	];
+	// var wizards = [
+	// 	{
+	// 		name: names[window.setup.getRandom(0, 7)] + ' ' + surnames[window.setup.getRandom(0, 7)],
+	// 		coatColor: coatColor[window.setup.getRandom(0, 5)],
+	// 		eyesColor: eyesColor[window.setup.getRandom(0, 4)]
+	// 	},
+	// 	{
+	// 		name: names[window.setup.getRandom(0, 7)] + ' ' + surnames[window.setup.getRandom(0, 7)],
+	// 		coatColor: coatColor[window.setup.getRandom(0, 5)],
+	// 		eyesColor: eyesColor[window.setup.getRandom(0, 4)]
+	// 	},
+	// 	{
+	// 		name: names[window.setup.getRandom(0, 7)] + ' ' + surnames[window.setup.getRandom(0, 7)],
+	// 		coatColor: coatColor[window.setup.getRandom(0, 5)],
+	// 		eyesColor: eyesColor[window.setup.getRandom(0, 4)]
+	// 	},
+	// 	{
+	// 		name: names[window.setup.getRandom(0, 7)] + ' ' + surnames[window.setup.getRandom(0, 7)],
+	// 		coatColor: coatColor[window.setup.getRandom(0, 5)],
+	// 		eyesColor: eyesColor[window.setup.getRandom(0, 4)]
+	// 	}
+	// ];
 
-	var getWizard = function(wizard){
-		var getWizardElement = similarWizardTemplate.cloneNode(true);
-		getWizardElement.querySelector('.setup-similar-label').textContent = wizard.name;
-		getWizardElement.querySelector('.wizard-coat').style.fill = wizard.coatColor;
-		getWizardElement.querySelector('.wizard-eyes').style.fill = wizard.eyesColor;
+	// var getWizard = function(wizard){
+	// 	var getWizardElement = similarWizardTemplate.cloneNode(true);
+	// 	getWizardElement.querySelector('.setup-similar-label').textContent = wizard.name;
+	// 	getWizardElement.querySelector('.wizard-coat').style.fill = wizard.coatColor;
+	// 	getWizardElement.querySelector('.wizard-eyes').style.fill = wizard.eyesColor;
 
-		return getWizardElement;
-	};
+	// 	return getWizardElement;
+	// };
 
-	for(var i = 0; i < wizards.length; i++){
-		fragment.appendChild(getWizard(wizards[i]));
-	}
-	setupSimilarList.appendChild(fragment);
-	window.setup.setup.querySelector('.setup-similar').classList.remove('hidden');
+	// for(var i = 0; i < wizards.length; i++){
+	// 	fragment.appendChild(getWizard(wizards[i]));
+	// }
+	// setupSimilarList.appendChild(fragment);
+	// window.setup.setup.querySelector('.setup-similar').classList.remove('hidden');
 })();
