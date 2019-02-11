@@ -1,7 +1,37 @@
+'use strict';
 (function(){
 	var similarWizardTemplate = document.querySelector('#similar-wizard-template')
 		.content.querySelector('.setup-similar-item');
 	var setupSimilarList = window.setup.setup.querySelector('.setup-similar-list');
+	var getWizardElement = window.setup.setup.querySelector('.setup-wizard');
+
+	var EYES_COLORS = [
+		'red',
+		'orange',
+		'yellow', 
+		'green', 
+		'lightblue',
+		'blue',
+		'purple'
+	];
+
+	var COAT_COLORS = [
+		'rgb(101, 137, 164)', 
+		'rgb(241, 43, 107)', 
+		'rgb(146, 100, 161)', 
+		'rgb(56, 159, 117)', 
+		'rgb(215, 210, 55)', 
+		'rgb(0, 0, 0)',
+	];
+
+	var coatColor;
+	var eyesColor;
+	var wizard = [];
+
+	var getRandomElement = function(array){
+		var randomElementIndex = Math.floor(Math.random() * array.length);
+		return array[randomElementIndex];
+	}
 
 	var successHandler = function(wizard){
 		var getWizardElement = similarWizardTemplate.cloneNode(true);
@@ -11,7 +41,7 @@
 		return getWizardElement;
 	}
 
-	var renderError = function(errorMessage){
+	var errorHandler = function(errorMessage){
 		var node = document.createElement('div');
 		node.style = 'z-index: 100; margin: 0 auto; text-align: center; background-color: red';
 		node.style.position = 'absolute';
@@ -23,12 +53,14 @@
 	}
 
 	var onSuccess = function(data){
-		var fragment = document.createDocumentFragment();
-		for(var i = 0; i < 4; i++){
-			fragment.appendChild(successHandler(data[i]))
-		}
-		setupSimilarList.appendChild(fragment);
-		window.setup.setup.querySelector('.setup-similar').classList.remove('hidden');
+		wizard = data;
+		window.successHandler(wizards);
+		// var fragment = document.createDocumentFragment();
+		// for(var i = 0; i < 4; i++){
+		// 	fragment.appendChild(successHandler(data[i]))
+		// }
+		// setupSimilarList.appendChild(fragment);
+		// window.setup.setup.querySelector('.setup-similar').classList.remove('hidden');
 	};
 
 	var onError = function(message){
@@ -42,5 +74,5 @@
 		});
 		evt.preventDefault();
 	});
-	window.backend.load('https://js.dump.academy/code-and-magick/data', onSuccess, renderError);
+	window.backend.load('https://js.dump.academy/code-and-magick/data', onSuccess, errorHandler);
 })();

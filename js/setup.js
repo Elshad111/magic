@@ -41,11 +41,11 @@
 	});
 })();
 
-(function(){
+// (function(){
 	// var setupUser = window.setup.setup.querySelector('.setup-user-name');
-	var wizardCoat = window.setup.setup.querySelector('.setup-wizard .wizard-coat');
-	var wizardEyes = window.setup.setup.querySelector('.setup-wizard .wizard-eyes');
-	var wizardFireball = window.setup.setup.querySelector('.setup-fireball-wrap');
+	// var wizardCoat = window.setup.setup.querySelector('.setup-wizard .wizard-coat');
+	// var wizardEyes = window.setup.setup.querySelector('.setup-wizard .wizard-eyes');
+	// var wizardFireball = window.setup.setup.querySelector('.setup-fireball-wrap');
 
 	// var similarWizardTemplate = document.querySelector('#similar-wizard-template')
 	// 	.content.querySelector('.setup-similar-item');
@@ -54,31 +54,31 @@
 
 	// var names = ['Иван', 'Хуан Себастьян', 'Мария', 'Кристоф', 'Виктор', 'Юлия', 'Люпита', 'Вашингтон'];
 	// var surnames = ['да Марья', 'Верон', 'Мирабелла', 'Вальц', 'Онопко', 'Топольницкая', 'Нионго', 'Ирвинг'];
-	var coatColor = ['rgb(101, 137, 164)', 'rgb(241, 43, 107)', 'rgb(146, 100, 161)', 'rgb(56, 159, 117)', 'rgb(215, 210, 55)', 'rgb(0, 0, 0)'];
-	var eyesColor = ['black', 'red', 'blue', 'yellow', 'green'];
-	var fireballColor = ['#ee4830', '#30a8ee', '#5ce6c0', '#e848d5', '#e6e848'];
-	var counter = 0;
+	// var coatColor = ['rgb(101, 137, 164)', 'rgb(241, 43, 107)', 'rgb(146, 100, 161)', 'rgb(56, 159, 117)', 'rgb(215, 210, 55)', 'rgb(0, 0, 0)'];
+	// var eyesColor = ['black', 'red', 'blue', 'yellow', 'green'];
+	// var fireballColor = ['#ee4830', '#30a8ee', '#5ce6c0', '#e848d5', '#e6e848'];
+	// var counter = 0;
 
-	var changeWizard = function(arr){
-		counter++;
-		if(counter > arr.length - 1){
-			counter = 0;
-		}
-		return arr[counter];
-	};	
+	// var changeWizard = function(arr){
+	// 	counter++;
+	// 	if(counter > arr.length - 1){
+	// 		counter = 0;
+	// 	}
+	// 	return arr[counter];
+	// };	
 
-	wizardCoat.addEventListener('click', function(){
-		wizardCoat.style.fill = changeWizard(coatColor);
+	// wizardCoat.addEventListener('click', function(){
+	// 	wizardCoat.style.fill = changeWizard(coatColor);
 		//wizardCoat.style.fill = coatColor[window.setup.getRandom(0, 5)];
-	});
-	wizardEyes.addEventListener('click', function(){
-		wizardEyes.style.fill = changeWizard(eyesColor);
+	// });
+	// wizardEyes.addEventListener('click', function(){
+	// 	wizardEyes.style.fill = changeWizard(eyesColor);
 		//wizardEyes.style.fill = eyesColor[window.setup.getRandom(0, 4)];
-	});
-	wizardFireball.addEventListener('click', function(){
-		wizardFireball.style.background = changeWizard(fireballColor);
+	// });
+	// wizardFireball.addEventListener('click', function(){
+	// 	wizardFireball.style.background = changeWizard(fireballColor);
 		//wizardFireball.style.background = fireballColor[window.setupgetRandom(0, 4)];
-	});
+	// });
 
 	// var wizards = [
 	// 	{
@@ -117,4 +117,4 @@
 	// }
 	// setupSimilarList.appendChild(fragment);
 	// window.setup.setup.querySelector('.setup-similar').classList.remove('hidden');
-})();
+// })();
