@@ -39,36 +39,6 @@
 		return rank;
 	};
 
-	var namesComparator = function(left, right){
-		if(left > right){
-			return 1;
-		}else if(left < right){
-			return -1;
-		}else{
-			return 0;
-		}
-	};
-
-	var updateWizards = function(){
-		window.render(wizards.sort(function(left, right){
-			var rankDiff = getRank(right) - getRank(left);
-			if(rankDiff === 0){
-				rankDiff = namesComparator(left.name, right.name);
-			}
-			return rankDiff;
-		}));
-	};
-
-	window.wizard.onEyesChange = function(color){
-		eyesColor = color;
-		updateWizards();
-	}
-
-	window.wizard.onCoatChange = function(color){
-		coatColor = color;
-		updateWizards();
-	}
-
 	var getRandomElement = function(array){
 		var randomElementIndex = Math.floor(Math.random() * array.length);
 		return array[randomElementIndex];
@@ -88,25 +58,9 @@
 		updateWizards();
 	});
 
-	var errorHandler = function(errorMessage){
-		var node = document.createElement('div');
-		node.style = 'z-index: 100; margin: 0 auto; text-align: center; background-color: red';
-		node.style.position = 'absolute';
-		node.style.left = 0;
-		node.style.right = 0;
-		node.style.fontSize = '30px';
-		node.textContent = errorMessage;
-		document.body.insertAdjacentElement('afterend', node);
-	}
-
-	var onSuccess = function(data){
-		wizards = data;
-		window.render(wizards);
-	};
-
-	var onError = function(message){
-		console.log(message);
-	};
+	// var onError = function(message){
+	// 	console.log(message);
+	// };
 
 	var form = window.setup.setup.querySelector('.setup-wizard-form');
 	form.addEventListener('submit', function(evt){
@@ -115,5 +69,4 @@
 		});
 		evt.preventDefault();
 	});
-	window.backend.load('https://js.dump.academy/code-and-magick/data', onSuccess, errorHandler);
 })();
