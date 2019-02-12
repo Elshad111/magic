@@ -30,6 +30,18 @@
 	var eyesColor;
 	var wizards = [];
 
+	var getRank = function(wizard){
+		var rank = 0;
+
+		if(wizard.colorCoat === coatColor){
+			rank += 2;
+		}
+		if(wizard.colorEyes === eyesColor){
+			rank += 1;
+		}
+		return rank;
+	}
+
 	var updateWizards = function(){
 
 		var sameCoatAndEyesWizards = wizards.filter(function(it){
