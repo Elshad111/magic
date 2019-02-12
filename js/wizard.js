@@ -38,16 +38,12 @@
 
 	window.wizard.onEyesChange = function(color){
 		eyesColor = color;
-		window.setTimeout(function(){
-			updateWizards();
-		}, 300);
+		window.debounce(updateWizards);
 	}
 
 	window.wizard.onCoatChange = function(color){
 		coatColor = color;
-		window.setTimeout(function(){
-			updateWizards();
-		}, 300);
+		window.debounce(updateWizards);
 	}
 
 	var onSuccess = function(data){
