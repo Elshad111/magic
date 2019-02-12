@@ -50,31 +50,24 @@
 	};
 
 	var updateWizards = function(){
-
-		var sameCoatAndEyesWizards = wizards.filter(function(it){
-			return it.colorCoat === coatColor && it.colorEyes === eyesColor;
-		});
-
-		var sameCoatWizards = wizards.filter(function(it){
-			return it.colorCoat === coatColor;
-		});
-		var sameEyesWizards = wizards.filter(function(it){
-			return it.colorEyes === eyesColor;
-		});
-
-		window.render(sameCoatWizards.concat(sameEyesWizards).concat(wizards));
-
-		var filteredWizards = sameCoatAndEyesWizards;
-		filteredWizards = filteredWizards.concat(sameCoatWizards);
-		filteredWizards = filteredWizards.concat(sameEyesWizards);
-		filteredWizards = filteredWizards.concat(wizards);
-
-		var uniqueWizards = filterWizards.filter(function(it, i){
-			return filterWizards.indexOf(it) === it;
-		});
-
-		window.render(uniqueWizards);
+		window.render(wizards.sort(function(left, right){
+			var rankDiff = getRank(right) - getRank(left);
+			if(rankDiff === 0){
+				rankDiff = namesComparator(left.name, right.name);
+			}
+			return rankDiff;
+		}));
 	};
+
+	window.wizard.onEyesChange = function(color){
+		eyesColor = color;
+		updateWizards();
+	}
+
+	window.wizard.onCoatChange = function(color){
+		coatColor = color;
+		updateWizards();
+	}
 
 	var getRandomElement = function(array){
 		var randomElementIndex = Math.floor(Math.random() * array.length);
