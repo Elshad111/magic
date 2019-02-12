@@ -38,12 +38,16 @@
 
 	window.wizard.onEyesChange = function(color){
 		eyesColor = color;
-		updateWizards();
+		window.setTimeout(function(){
+			updateWizards();
+		}, 300);
 	}
 
 	window.wizard.onCoatChange = function(color){
 		coatColor = color;
-		updateWizards();
+		window.setTimeout(function(){
+			updateWizards();
+		}, 300);
 	}
 
 	var onSuccess = function(data){
@@ -61,7 +65,7 @@
 		node.textContent = errorMessage;
 		document.body.insertAdjacentElement('afterend', node);
 	}
-	
+
 	var URL = 'https://js.dump.academy/code-and-magick/data';
 	window.backend.load(URL, onSuccess, errorHandler);
 })();
