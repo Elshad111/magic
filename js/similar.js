@@ -1,5 +1,9 @@
 'use strict';
 (function(){
+	var getWizardElement = window.setup.setup.querySelector('.setup-wizard');
+	var wizardCoatElement = window.setup.setup.querySelector('.wizard-coat');
+	var wizardEyesElement = window.setup.setup.querySelector('.wizard-eyes');
+
 	var EYES_COLORS = [
 		'red',
 		'orange',
