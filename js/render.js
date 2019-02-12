@@ -40,7 +40,17 @@
 			rank += 1;
 		}
 		return rank;
-	}
+	};
+
+	var namesComparator = function(left, right){
+		if(left > right){
+			return 1;
+		}else if(left < right){
+			return -1;
+		}else{
+			return 0;
+		}
+	};
 
 	var updateWizards = function(){
 
