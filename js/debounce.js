@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 (function(){
 	var DEBOUNCE_INTERVAL = 300;
 
@@ -14,5 +14,5 @@
 				fun.apply(null, args);
 			}, DEBOUNCE_INTERVAL);
 		};
-	};
+	}
 })();

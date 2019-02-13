@@ -23,22 +23,6 @@
 		'rgb(0, 0, 0)',
 	];
 
-	var coatColor;
-	var eyesColor;
-	var wizards = [];
-
-	var getRank = function(wizard){
-		var rank = 0;
-
-		if(wizard.colorCoat === coatColor){
-			rank += 2;
-		}
-		if(wizard.colorEyes === eyesColor){
-			rank += 1;
-		}
-		return rank;
-	};
-
 	var getRandomElement = function(array){
 		var randomElementIndex = Math.floor(Math.random() * array.length);
 		return array[randomElementIndex];
@@ -47,15 +31,13 @@
 	wizardCoatElement.addEventListener('click', function(){
 		var newColor =  getRandomElement(COAT_COLORS);
 		this.style.fill = newColor;
-		coatColor = newColor;
-		updateWizards();
+		window.wizard.onCoatChange(newColor);
 	});
 
 	wizardEyesElement.addEventListener('click', function(){
 		var newColor = getRandomElement(COAT_COLORS);
 		this.style.fill = newColor;
-		eyesColor = newColor;
-		updateWizards();
+		window.wizard.onEyesChange(newColor);
 	});
 
 	// var onError = function(message){
