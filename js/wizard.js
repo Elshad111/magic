@@ -36,15 +36,26 @@
 		}));
 	};
 
+	var lastTimeout;
 	window.wizard = {
 		onEyesChange: function(color){
 			eyesColor = color;
-			window.debounce(updateWizards);
+			if(lastTimeout){
+				window.clearTimeout(lastTimeout);
+			}
+			lastTimeout = window.setTimeout(function(){
+				updateWizards();
+			}, 300);
 		},
 
 		onCoatChange: function(color){
 			coatColor = color;
-			window.debounce(updateWizards);
+			if(lastTimeout){
+				window.clearTimeout(lastTimeout);
+			}
+			lastTimeout = window.setTimeout(function(){
+				updateWizards();
+			}, 300);
 		}
 	};
 
