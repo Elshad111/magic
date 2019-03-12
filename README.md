@@ -1,2 +1,3 @@
 # magic
-Training project
+
+Training project «Code and Magic».
