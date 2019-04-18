@@ -7,7 +7,7 @@ Check the demo: https://elshad98.github.io/code-and-magic/
 
 First clone this repository.
 ```
-$ git clone https://github.com/maraero/code-and-magic.git
+$ git clone https://github.com/elshad98/code-and-magic.git
 ```
 Then go to the folder
 ```
